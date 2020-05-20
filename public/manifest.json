@@ -1,25 +1,24 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Quindiplatanos",
+  "short_name":"Quindiplatanos",
   "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
+      {
+          "src":"https://quindiplatanos.s3.amazonaws.com/5ec08c82e07c773c4c78e792-logo.png",
+          "sizes": "192x192",
+          "type": "image/png"
+      },
+      {
+          "src":"https://quindiplatanos.s3.us-east-2.amazonaws.com/5ec08d5123ed2c3fa55500bf-logo.png",
+          "sizes": "512x512",
+          "type": "image/png"
+      }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#ffa500",
+  "background_color": "#ffffff",
+  "related_applications": [],
+  "prefer_related_applications": false
 }
+

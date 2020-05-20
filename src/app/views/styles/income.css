@@ -1,0 +1,202 @@
+.income-container {
+    display: flex;
+    padding: 40px 0 0 0; 
+    justify-content: center;
+    flex-wrap: wrap;   
+}
+
+.addIncome {
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.addIncome-description, .descriptionIncome, .IncomeGroup {
+    display: block;
+}
+
+.IncomeGroup{
+    border: 1px solid black;
+    width: max-content;
+    margin-bottom: 10px;
+}
+
+.descriptionIncome {
+    border: 0.5px solid gray;
+}
+
+.addIncome-value {
+    font-weight: bold;
+}
+
+.valueIncome {
+    width: max-content;
+    margin-left: 2px;
+    border-right: 1px solid black;
+}
+
+.incomeTable tr td, .incomeTable tr th, table  {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+   padding: 15px; 
+}
+
+.incomeBtn {
+    text-align: center;
+    margin: 20px 20px 5px 20px;
+}
+
+.incomeBtn button {
+    border-style: none;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(23, 94, 47);
+    width: 80px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+.incomeTable-container {
+    margin:20px;
+}
+
+.th-name{
+    width: 240px;
+}
+
+.th-valor {
+    width: 88px;
+    text-align: center;
+}
+
+.incomeTotal {
+    text-align: right;
+    margin: 20px 20px 0 0;
+    font-size: x-large;
+}
+
+.total {
+    text-align: center;
+    font-weight: bold;
+}
+
+.editIncome{
+    color: green;
+    font-size: x-large;
+    margin-right: 10px;
+}
+
+.deleteIncome{
+    color: red;
+    font-size: x-large;
+}
+
+
+@media screen and (max-width:1024px) and (min-width:640px){
+
+    .income-container {
+        display: grid;
+        grid-template: 2fr/1fr;
+        padding: 40px 0 0 0;
+        justify-content: center;
+    }
+
+    .addIncome {
+        justify-self: center;
+    }
+
+    .IncomeGroup{
+        width: 400px;
+        text-align: left;
+    }
+
+    .valueIncome {
+        width: 89%;
+        padding-left: 1px;
+    }
+
+    .descriptionIncome {
+        width: 400px;
+    }
+
+    .incomeBtn button {
+        background-color: rgb(23, 94, 47);
+        width: 90px;
+        height: 40px;
+        border-radius: 8px;
+    }
+
+    .income-container .incomeTable-container h3 {
+        margin: 0px 0px 20px 0px;
+    }
+
+    .incomeTable-container{
+        display: grid;
+        grid-template: 2fr / 1fr;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .incomeTable{
+        width: 90%;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (min-width:1024px){
+
+    .income-container {
+        display: grid;
+        grid-template: 1fr/50% 50%;
+        padding: 80px 0 0 0;
+        justify-content: space-around;
+    }
+
+    .incomeTable-container {
+        margin: 0px 20px 20px 20px;
+    }
+
+    .income-container .incomeTable-container h3 {
+        margin: 0px 0px 20px 0px;
+    }
+
+    .IncomeGroup{
+        width: 400px;
+        text-align: left;
+    }
+
+    .valueIncome {
+        width: 89%;
+        height: 25px;
+        padding-left: 1.2px;
+    }
+
+    .descriptionIncome {
+        width: 400px;
+        height: 100%;
+    }
+
+    .addIncome {
+        display: grid;
+        grid-template: 1fr 200px 1fr / 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .IncomeGroup{
+        align-content: center;
+        height: max-content;
+    }
+
+    .incomeBtn button {
+        background-color: rgb(23, 94, 47);
+        width: 130px;
+        height: 45px;
+        border-radius: 8px;
+    }
+
+}

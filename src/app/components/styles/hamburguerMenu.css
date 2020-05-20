@@ -1,0 +1,15 @@
+.menuHamburguer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.menuHamburguer-container:visited {
+    color: black;
+}

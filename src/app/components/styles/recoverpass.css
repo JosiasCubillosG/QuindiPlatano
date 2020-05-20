@@ -1,0 +1,113 @@
+.recover-container {
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    background-image: url("../../../images/platanos.jpg");
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.recover{
+    display: grid;
+    grid-template: 20% 50% 30%/1fr;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    background-color: rgba(255,255,255,0.5);
+}
+
+
+
+.recover-icon {
+    font-size: xx-large;
+    color: green;
+}
+
+.recover-pass {
+    width: 200px;
+    height: 25px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+}
+
+.recover-pass::placeholder{
+    color: black;
+    font-size: large;
+}
+
+.group-recover {
+    display: grid;
+    grid-template: 1fr/ 20% 80%;
+    width: max-content;
+    height: 50px;
+}
+
+.group-recover-input{
+    display: grid;
+    justify-content: start;
+}
+
+.group-recover-icon{
+    display: grid;
+    grid-template: 100%/100%;
+    justify-content: end;
+}
+
+.recover-btn {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+    width: max-content;
+    height: 60px;
+    border-radius: 8px;
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+
+
+@media screen and (min-width:1024px){
+    .recover-container{
+        display: grid;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+    }
+
+    .recover{
+        width: 500px;
+        height: 400px;
+        margin-top: 50px;
+        border: .5px solid green;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .group-recover{
+        width: 80%;
+    }
+
+    .group-recover-icon{
+        justify-items: center;
+    }
+
+    .recover-icon{
+        color: black;
+        font-size: xx-large;
+    }
+
+    .recover-pass{
+        width: 300px;
+        height: 35px;
+
+    }
+
+
+
+}
+

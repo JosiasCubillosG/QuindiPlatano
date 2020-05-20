@@ -1,0 +1,101 @@
+.accounting-container {
+    display: grid;
+    grid-template:  3fr/1fr;
+    justify-items: center;
+    width: 100%;
+    background-image: url('../../../images/cultivoPlatano.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(255,255,255,0.2);
+    background-blend-mode: lighten;
+}
+
+.accounting-container a, .accounting-container a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.income, .outlay, .grossProfit {
+    display: grid;
+    grid-template: 170px/300px ;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    border: 1px solid black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 3%;
+    box-shadow: 10px 10px 5px #171515;
+}   
+
+.income{
+    margin-top:50px;
+}
+
+
+.income h3, .outlay h3, .grossProfit h3 {
+    margin: 0;
+}
+
+.income {
+    background-image: url("../../../images/ingreso.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-color: rgba(255,255,255,0.2);
+    background-blend-mode: lighten;
+}
+
+.outlay {
+    background-image: url("../../../images/egreso.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(255,255,255,0.2);
+    background-blend-mode: lighten;
+}
+
+.grossProfit {
+    background-image: url("../../../images/utilidad.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-color: rgba(255,255,255,0.2);
+    background-blend-mode: lighten;
+}
+
+@media screen and (max-width:1024px) and (min-width:640px){
+
+    .income, .outlay, .grossProfit {
+        width: 550px;
+        height: 200px;
+        border-radius: 4%;
+        
+    }
+
+    .income h3, .outlay h3, .grossProfit h3 {
+        margin: 0;
+        font-size: xx-large;
+    }
+}
+
+@media screen and (min-width:1024px){
+
+    .accounting-container {
+        grid-template: 1fr/1fr 1fr 1fr;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+    }
+
+    .income, .outlay, .grossProfit {
+        height: 250px;
+        border-radius: 5%;
+        margin: 20px;
+
+    }
+
+    .income h3, .outlay h3, .grossProfit h3 {
+        margin: 0;
+        font-size: xx-large;
+    }
+}

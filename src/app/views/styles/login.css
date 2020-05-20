@@ -1,0 +1,129 @@
+.login{
+    display: grid;
+    grid-template: 20% 80%/1fr;
+    justify-content: center;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.group-email-input{
+    display: grid;
+    justify-content: flex-end;
+}
+
+.group-email-icon, .group-password-icon{
+    display: grid;
+    grid-template: 100%/100%;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    justify-content: end;
+}
+
+.login-form{
+    display: grid;
+    grid-template: 25% 25% 25% 25%/1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.login-container{
+    height: 100%;
+    text-align: center;
+    background-image: url('../../../images/fumigar.jpg');
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.password-icon, .login-icon{
+    color: green;
+    font-size: large;
+}
+
+
+.login-container h2 {
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+
+.login-email, .login-password {
+    width: 200px;
+    height: 25px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+}
+
+.login-email::placeholder, .login-password::placeholder{
+    color: black;
+    font-size: medium;
+}
+
+.group-email, .group-password{
+    display: grid;
+    grid-template: 1fr/20% 80%;
+    width: max-content;
+    justify-items: center;
+    align-items: end;
+}
+
+.login-btn {
+    background-color: rgb(3, 145, 3);
+    color: white;
+    font-size: medium;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+
+.login-p{
+    display: block;
+    background-color: transparent;
+    border: none;
+    margin: 0 auto;
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+}
+
+@media screen and (min-width:1024px){
+    .login-container{
+        display: grid;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+    }
+
+    .login{
+        width: 500px;
+        height: 400px;
+        margin-top: 50px;
+        border: .5px solid gray;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .group-email, .group-password{
+        width: 80%;
+    }
+
+    .password-icon, .login-icon{
+        color: green;
+        font-size: x-large;
+    }
+
+    .login-email, .login-password {
+        width: 300px;
+        height: 35px;
+
+    }
+
+
+
+}

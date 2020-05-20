@@ -1,0 +1,31 @@
+.useful-title, .useful-value {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.useful-value .useful-value-icon{
+    height: 150px;
+    width: 150px;
+    color: green;
+}
+
+.useful-value .useful-value-p {
+    margin: 0;
+    font-size: 30px;
+}
+
+.useful-icon {
+    color: black;
+    height: 30px;
+    width: 30px;
+}
+
+.useful_income_outlay h3 {
+    margin: 0;
+}
+
+.useful_income_outlay{
+    margin: 80px 20px 40px 20px ;
+    padding-left: 30px;
+}

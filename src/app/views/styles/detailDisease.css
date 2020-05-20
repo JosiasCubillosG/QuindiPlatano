@@ -1,0 +1,39 @@
+.detailDisease-container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+
+.nameDisease {
+    text-align: center;
+}
+
+.symptomatology, .treatment {
+    padding: 10px 50px 10px 50px;
+}
+
+
+
+.btnContact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    height: 100%;
+    font-weight: bold;
+    font-size: x-large;
+    background-color: rgba(66, 99, 66, 0.74)
+}
+
+.carouselDisease .carousel {
+    height: 200px;
+    overflow: hidden;
+    /* Add this */
+
+}
+
+.carouselDisease div {
+    display: flex;
+    justify-content: center;
+}

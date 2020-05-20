@@ -1,0 +1,65 @@
+.menu-container {
+    display: grid;
+    grid-template: 5/1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255, 0.9);
+}
+
+.menuHome h2, .menuDiseases h2, .menuAccounting h2, .menuControl h2, .menuLogOut h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+}
+
+.menuHome, .menuDiseases, .menuAccounting, .menuControl, .menuLogOut {
+    display: grid;
+    border: 1px solid gray;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+.menuHome:visited, .menuDiseases:visited, .menuAccounting:visited, .menuControl:visited, .menuLogOut:visited {
+    color: black;
+}
+
+
+.menuHome {
+    background-image: url("../../../images/home.svg");
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.menuLogOut {
+    background-image: url("../../../images/cerrar.svg");
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.menuDiseases {
+    background-image: url("../../../images/enfermedades.svg");
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.menuAccounting {
+    background-image: url("../../../images/contabilidad.svg");
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.menuControl {
+    background-image: url("../../../images/control.svg");
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,63 @@
+.choose-container {
+    display: grid;
+    grid-template: 3 / 1; 
+    width: 100%;
+    height: 100%;
+}
+
+.choose-container a {
+    text-decoration: none;
+}
+
+.choose-container a:visited {
+    color: black;
+}
+
+.sickOption, .accountingOption, .controlOption {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.sickOption {
+    background-image: url("../../../images/Enfermedades.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255,255,255,0.2);
+    background-blend-mode: lighten;
+    background-position: center;
+}
+
+.accountingOption {
+    background-image: url("../../../images/contabilidad.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255,255,255,0.2);
+    background-blend-mode: lighten;
+    background-position: center;
+}
+
+.controlOption {
+    background-image: url("../../../images/control.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255,255,255,0.2);
+    background-blend-mode: lighten;
+    background-position: center;
+}
+
+@media screen and (min-width: 1024px){
+    .choose-container {
+        display: grid;
+        grid-template: 100% / 33.33% 33.33% 33.34%; 
+    }
+
+    .sickOption, .accountingOption, .controlOption{
+        height: 100%;
+    }
+
+    .accountingOption{
+        background-position: bottom;
+    }
+}
