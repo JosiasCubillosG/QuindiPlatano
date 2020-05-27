@@ -94,6 +94,35 @@ class DetailCrop extends React.Component {
         })
     }
 
+    changeStatus = (e,task) => {
+        if(task.state){
+            task.state = false
+            e.target.style.backgroundColor = "red"
+            Axios(`/api/lots/${this.state.lot._id}`,{method: 'PUT', data:{...this.state.lot}})
+                .then(res =>{
+                    console.log(res)
+                    console.log('BIEN')
+                })
+                .catch(err =>{
+                    console.log(err)
+                    console.log('MALL')
+                })
+        }else{
+            task.state = true
+            e.target.style.backgroundColor = "green"
+            Axios(`/api/lots/${this.state.lot._id}`,{method: 'PUT', data:{...this.state.lot}})
+                .then(res =>{
+                    console.log(res)
+                    console.log('BIEN')
+                })
+                .catch(err =>{
+                    console.log(err)
+                    console.log('MALL')
+                })
+        }
+    }
+
+
     render() {
 
         const{lot,cargando,error} = this.state
@@ -121,29 +150,28 @@ class DetailCrop extends React.Component {
                 <div className="cropTasks">
                     <h3>Tareas:</h3>
                     {
-                        lot.tasks.map(task => {
+                        lot.tasks.map(task =>{
                             if(task.state){
-                                return(
-                                    <div className="cropTaskDetail1">
-                                        <h4>{task.name}</h4>
-                                        <div className="check">
-                                            <h6>Dentro de: {task.days}</h6>
-                                            <div className="checkTaskTrue"></div>
-                                        </div>
-                                    </div>
-                                )
+                                var colorTask = {
+                                    backgroundColor: 'green'
+                                }
                             }else{
-                                return(
-                                    <div className="cropTaskDetail1">
-                                        <h4>{task.name}</h4>
-                                        <div className="check">
-                                            <h6>Dentro de: {task.days}</h6>
-                                            <div className="checkTaskFalse"></div>
-                                        </div>
-                                    </div>
-                                )
+                                var colorTask = {
+                                    backgroundColor: 'red'
+                                }
                             }
-                            
+                            const Image = {
+                                backgroundImage: 'url(' + task.imageURL + ')',
+                              };
+                            return(
+                                <div className="cropTaskDetail" style={Image}>
+                                    <h4>{task.name}</h4>
+                                    <div className="check">
+                                        <h6>Dentro de: {task.days} dias</h6>
+                                        <div className="checkTaskFalse" style={colorTask} onClick={(e) => this.changeStatus(e,task)}></div>
+                                    </div>
+                                </div>
+                            )
                         })
                     }
                 </div>

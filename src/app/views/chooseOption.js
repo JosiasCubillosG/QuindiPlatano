@@ -2,9 +2,34 @@ import React from 'react'
 import Layout from '../components/Layout'
 import "./styles/chooseOption.css"
 import {Link} from "react-router-dom"
-import Context from '../Context'
+import Axios from 'axios'
+import moment from 'moment'
+import 'moment/locale/es'
+moment.locale('es')
 
 class ChooseOption extends React.Component {
+    
+    componentDidMount = async() => {
+        try {
+            const response = await Axios('/api/lots')
+            // console.log(response.data.lots)
+            response.data.lots.map(lot => {      
+                lot.tasks.forEach((task,index) => {
+                    // console.log(task)
+                    if(moment(lot.createdDate).add(task.days, 'minutes').format() <= moment().format() && !task.state){
+                        // const lotData = Object.assign({},lot)
+                        // lotData.tasks[index].state = true
+                        // console.log(lotData)
+                        // const status = Axios(`/api/lots/${lot._id}`,{method: 'PUT', data:{lotData}})
+                        const t =  Axios('/api/pushNotifications/newNotification',{method:'POST',data: {message:task.name,imageNotification:task.imageURL, url: lot._id}})
+                    }
+                })
+            })
+        }catch(error){
+            console.log(error)
+        }
+    }
+
     render() {
         return (
             <div className="choose-container">

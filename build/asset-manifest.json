@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8d261aad.chunk.css",
+    "main.js": "/static/js/main.532870c6.chunk.js",
+    "main.js.map": "/static/js/main.532870c6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e3061cf0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e3061cf0.js.map",
+    "static/css/2.5517a65f.chunk.css": "/static/css/2.5517a65f.chunk.css",
+    "static/js/2.ffa8576c.chunk.js": "/static/js/2.ffa8576c.chunk.js",
+    "static/js/2.ffa8576c.chunk.js.map": "/static/js/2.ffa8576c.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.721cba16d4fa26a17eed885ad8f15c3b.js": "/precache-manifest.721cba16d4fa26a17eed885ad8f15c3b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.5517a65f.chunk.css.map": "/static/css/2.5517a65f.chunk.css.map",
+    "static/css/main.8d261aad.chunk.css.map": "/static/css/main.8d261aad.chunk.css.map",
+    "static/js/2.ffa8576c.chunk.js.LICENSE.txt": "/static/js/2.ffa8576c.chunk.js.LICENSE.txt",
+    "static/media/diseases.css": "/static/media/enfermedad1.d90e6175.jpeg",
+    "static/media/menu.css": "/static/media/home.64d02463.svg",
+    "static/media/chooseOption.css": "/static/media/control.89bfba7a.jpg",
+    "static/media/accounting.css": "/static/media/utilidad.167454f3.jpg",
+    "static/media/login.css": "/static/media/fumigar.609b414d.jpg",
+    "static/media/notifications.css": "/static/media/notification.c0d3c94c.eot",
+    "static/media/recoverpass.css": "/static/media/platanos.91975579.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e3061cf0.js",
+    "static/css/2.5517a65f.chunk.css",
+    "static/js/2.ffa8576c.chunk.js",
+    "static/css/main.8d261aad.chunk.css",
+    "static/js/main.532870c6.chunk.js"
+  ]
+}

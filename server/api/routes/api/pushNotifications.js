@@ -6,15 +6,21 @@ let pushSubscription;
 router.post('/subscription', async(req,res) => {
     pushSubscription = req.body
     res.status(200).json()
+})
+
+router.post('/newNotification', async(req,res) => {
+    const {message, imageNotification, url} = req.body
     const payload = JSON.stringify({
         title: 'QuindiPlatanos',
-        message: 'Hello World!'
+        message: message,
+        imageNotification: imageNotification,
+        url: url
     })
     
     try{
         await push.sendNotification(pushSubscription,payload)
-    }catch{
-        console.log(error)
+    }catch(err){
+        console.log(err)
     }
 })
 

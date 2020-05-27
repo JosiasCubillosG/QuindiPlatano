@@ -3,12 +3,12 @@
   "short_name":"Quindiplatanos",
   "icons": [
       {
-          "src":"https://quindiplatanos.s3.amazonaws.com/5ec08c82e07c773c4c78e792-logo.png",
+          "src":"https://quindiplatanos.s3.amazonaws.com/5ecc3fc467ce857162d88307-logo192x192.png",
           "sizes": "192x192",
           "type": "image/png"
       },
       {
-          "src":"https://quindiplatanos.s3.us-east-2.amazonaws.com/5ec08d5123ed2c3fa55500bf-logo.png",
+          "src":"https://quindiplatanos.s3.us-east-2.amazonaws.com/5ecc407367ce857162d88308-logo512x512.png",
           "sizes": "512x512",
           "type": "image/png"
       }

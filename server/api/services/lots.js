@@ -38,7 +38,6 @@ const LotsService = {
         const { body: lotData } = req;
         try{
             const lot = await Lot.findById(req.params.lotId);
-
             if (!lot) return res.send({
                 message: 'The lot does not exist',
                 status: 'error'

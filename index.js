@@ -1,4 +1,7 @@
-require('dotenv').config();
+if(process.env.NODE_ENV !== 'production'){
+	require('dotenv').config();
+}
+
 require('./server/api/models/lot');
 require('./server/api/models/accountingTable');
 require('./server/api/models/crop');
@@ -7,6 +10,7 @@ require('./server/api/models/expense');
 require('./server/api/models/income');
 require('./server/api/models/lot');
 require('./server/api/models/user');
+require('./server/api/models/addImage')
 
 const express = require("express");
 const path = require("path");
@@ -27,6 +31,7 @@ const incomesApiRouter = require('./server/api/routes/api/incomes');
 const expensesRouter = require('./server/api/routes/views/expenses');
 const expensesApiRouter = require('./server/api/routes/api/expenses');
 const pushNotificationsApiRouter = require('./server/api/routes/api/pushNotifications') 
+const addImagesApiRouter = require('./server/api/routes/api/addImages')
 
 const { MONGO_URI } = require('./server/api/config/constants/database');
 
@@ -72,6 +77,7 @@ app.use("/api/users", usersApiRouter);
 app.use("/api/incomes", incomesApiRouter);
 app.use("/api/expenses", expensesApiRouter);
 app.use("/api/pushNotifications", pushNotificationsApiRouter);
+app.use("/api/addImages", addImagesApiRouter );
 
 // redirect
 app.use("*", function(req, res){
@@ -79,6 +85,6 @@ app.use("*", function(req, res){
 });
 
 // server
-const server = app.listen(3001, function() {
+const server = app.listen(8000, function() {
   console.log(`Listening http://localhost:${server.address().port}`);
 });
