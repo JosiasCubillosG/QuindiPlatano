@@ -86,7 +86,7 @@
   },
   "scripts": {
     "cra": "node scripts/start.js",
-    "build": "cross-env NODE_ENV=production node scripts/build.js",
+    "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "dev": "cross-env NODE_ENV=development node index",
     "start": "cross-env NODE_ENV=production node index",
