@@ -85,13 +85,15 @@ th, td {
 
 .editIncome{
     color: green;
-    font-size: x-large;
+    font-size: xx-large;
     margin-right: 10px;
 }
 
 .deleteIncome{
     color: red;
-    font-size: x-large;
+    font-size: xx-large;
+    margin-right: 10px;
+    margin-top: 20px;
 }
 
 

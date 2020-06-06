@@ -14,7 +14,7 @@ class AddCrop extends React.Component {
 
     state = {
         name: '',
-        plants: 0,
+        plants: '',
         id: '',
     }
 
@@ -38,49 +38,53 @@ class AddCrop extends React.Component {
     addCrop = (e) => {
         e.preventDefault()
         if(this.state.plants == 0 || this.state.name.trim() == '' || Math.sign(this.state.plants) == -1){
-            NotificationManager.warning('Digite algún dato','Datos vacios')
+            NotificationManager.warning('Digite algún dato','Datos vacios',2000)
         }else{
             if(this.state.id){
-                Axios(`/api/lots/${this.state.id}`,{
-                    method: 'PUT',
-                    data: {...this.state}
-                })
-                .then(res => {
-                    if(res.data.status == 'success'){  
-                        this.props.history.push({
-                            pathname: `/options/detailCrop/${this.state.id}`,
-                            state: {...this.state}
-                        })
-                    }else{
-                        const error = new Error(res.error)
-                        throw error
-                    }
-                })
-                .catch(err =>{
-                    console.log(err)
-                })
-    
+                NotificationManager.info('Cultivo editado con exito','Cultivo editado',2000)
+                setTimeout(()=>{
+                    Axios(`/api/lots/${this.state.id}`,{
+                        method: 'PUT',
+                        data: {...this.state}
+                    })
+                    .then(res => {
+                        if(res.data.status == 'success'){  
+                            this.props.history.push({
+                                pathname: `/options/detailCrop/${this.state.id}`,
+                                state: {...this.state}
+                            })
+                        }else{
+                            const error = new Error(res.error)
+                            throw error
+                        }
+                    })
+                    .catch(err =>{
+                        console.log(err)
+                    })    
+                },1000)
             }else{
-                Axios('/api/lots',{
-                    method: 'POST',
-                    data: {...this.state}
-                })
-                .then(res=>{
-                    console.log('Cultivo creado')
-                    if(res.data.status === 'success') {
-                        alert('Cultivo creado')
-                        this.props.history.push({
-                            pathname: '/options/crops',
-                            state: {...this.state}
-                        })
-                    }else{
-                        const error = new Error(res.error)
-                        throw error
-                    }
-                })
-                .catch(err =>{
-                    console.log(err)
-                })
+                NotificationManager.info('Cultivo agregado con exito','Cultivo agregado',2000)
+                setTimeout(()=>{
+                    Axios('/api/lots',{
+                        method: 'POST',
+                        data: {...this.state}
+                    })
+                    .then(res=>{
+                        console.log('Cultivo creado')
+                        if(res.data.status === 'success') {
+                            this.props.history.push({
+                                pathname: '/options/crops',
+                                state: {...this.state}
+                            })
+                        }else{
+                            const error = new Error(res.error)
+                            throw error
+                        }
+                    })
+                    .catch(err =>{
+                        console.log(err)
+                    })
+                }, 1000) 
             }
         }
     }

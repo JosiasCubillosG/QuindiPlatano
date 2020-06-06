@@ -24,58 +24,14 @@ class DetailCrop extends React.Component {
     }
 
     getCrop = () => {
-        if(this.props.location.state){
-            Axios(`/api/lots/${this.props.match.params.id}`,{
-                method: 'GET'
-            })
-            .then(res => {
-                if(res.data.status == 'success'){
-                    this.setState({
-                        lot: res.data.lot,
-                        cargando: false,
-                    })
-                    NotificationManager.info('Cultivo editado con exito','Cultivo editado')
-                }else{
-                    const error = new Error(res.error)
-                    throw error
-                }
-            })
-            .catch(err => {
-                console.log(err)
-            })
-        }else{
-            Axios(`/api/lots/${this.props.match.params.id}`,{
-                method: 'GET'
-            })
-            .then(res => {
-                if(res.data.status == 'success'){
-                    this.setState({
-                        lot: res.data.lot,
-                        cargando: false,
-                    })
-                }else{
-                    const error = new Error(res.error)
-                    throw error
-                }
-            })
-            .catch(err => {
-                console.log(err)
-            })
-        }
-    }
-
-    deleteCrop = () => {
-        Axios(`/api/lots/${this.state.lot._id}`,{
-            method: 'DELETE'
+        Axios(`/api/lots/${this.props.match.params.id}`,{
+            method: 'GET'
         })
-        .then(res=>{
+        .then(res => {
             if(res.data.status == 'success'){
                 this.setState({
-                    edited: true
-                })
-                this.props.history.push({
-                    pathname: "/options/crops",
-                    state: {...this.state}
+                    lot: res.data.lot,
+                    cargando: false,
                 })
             }else{
                 const error = new Error(res.error)
@@ -85,6 +41,32 @@ class DetailCrop extends React.Component {
         .catch(err => {
             console.log(err)
         })
+    }
+
+    deleteCrop = () => {
+        NotificationManager.error('Cultivo eliminado con exito','Cultivo eliminado',2000)
+        setTimeout(() =>{
+            Axios(`/api/lots/${this.state.lot._id}`,{
+                method: 'DELETE'
+            })
+            .then(res=>{
+                if(res.data.status == 'success'){
+                    this.setState({
+                        edited: true
+                    })
+                    this.props.history.push({
+                        pathname: "/options/crops",
+                        state: {...this.state}
+                    })
+                }else{
+                    const error = new Error(res.error)
+                    throw error
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        },1000)
     }
 
     editCrop = () => {
@@ -136,7 +118,7 @@ class DetailCrop extends React.Component {
                 <div className="detailCrop">
                     <h2>{lot.name}</h2>
                     <p>Numero de plantas: {lot.plants}</p>
-                    <p>{moment(lot.createdDate).format('dddd LL h:s a')}</p>
+                    <p>{moment(lot.createdDate).format('LLLL')}</p>
                 </div>
                 <div className="optionsCrop">
                     <div className="editCrop">

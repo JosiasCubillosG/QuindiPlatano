@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.8d261aad.chunk.css",
-    "main.js": "/static/js/main.532870c6.chunk.js",
-    "main.js.map": "/static/js/main.532870c6.chunk.js.map",
+    "main.css": "/static/css/main.9a83f546.chunk.css",
+    "main.js": "/static/js/main.1b1792ee.chunk.js",
+    "main.js.map": "/static/js/main.1b1792ee.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e3061cf0.js",
     "runtime-main.js.map": "/static/js/runtime-main.e3061cf0.js.map",
     "static/css/2.5517a65f.chunk.css": "/static/css/2.5517a65f.chunk.css",
     "static/js/2.ffa8576c.chunk.js": "/static/js/2.ffa8576c.chunk.js",
     "static/js/2.ffa8576c.chunk.js.map": "/static/js/2.ffa8576c.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.721cba16d4fa26a17eed885ad8f15c3b.js": "/precache-manifest.721cba16d4fa26a17eed885ad8f15c3b.js",
+    "precache-manifest.d54f7dd10d7bfa25fff2be8f00af1b6e.js": "/precache-manifest.d54f7dd10d7bfa25fff2be8f00af1b6e.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.5517a65f.chunk.css.map": "/static/css/2.5517a65f.chunk.css.map",
-    "static/css/main.8d261aad.chunk.css.map": "/static/css/main.8d261aad.chunk.css.map",
+    "static/css/main.9a83f546.chunk.css.map": "/static/css/main.9a83f546.chunk.css.map",
     "static/js/2.ffa8576c.chunk.js.LICENSE.txt": "/static/js/2.ffa8576c.chunk.js.LICENSE.txt",
     "static/media/diseases.css": "/static/media/enfermedad1.d90e6175.jpeg",
     "static/media/menu.css": "/static/media/home.64d02463.svg",
@@ -26,7 +26,7 @@
     "static/js/runtime-main.e3061cf0.js",
     "static/css/2.5517a65f.chunk.css",
     "static/js/2.ffa8576c.chunk.js",
-    "static/css/main.8d261aad.chunk.css",
-    "static/js/main.532870c6.chunk.js"
+    "static/css/main.9a83f546.chunk.css",
+    "static/js/main.1b1792ee.chunk.js"
   ]
 }

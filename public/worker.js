@@ -11,6 +11,6 @@ self.addEventListener('push', e => {
 
 self.addEventListener('notificationclick', event => {
   event.notification.close();
-  clients.openWindow('https://www.youtube.com/');
+  clients.openWindow('https://quindiplatanos.herokuapp.com/options/crops');
 
 });

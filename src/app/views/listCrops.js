@@ -15,25 +15,9 @@ class ListCrops extends React.Component {
 
     state = {
         lots: [],
-        deleted: false,
-        created: false
     }
 
     componentDidMount = () => {
-        if(this.props.location.state){
-            if(this.props.location.state.edited){
-                this.setState({
-                    deleted: !this.state.deleted
-                })
-            }
-    
-            if(this.props.location.state.plants){
-                this.setState({
-                    created: true
-                })
-            }
-        }
-        
         this.getCrops()
     }
 
@@ -57,44 +41,34 @@ class ListCrops extends React.Component {
     }
 
     render() {
-
         const {lots} = this.state
-        if(this.state.deleted){
-            this.setState({
-                deleted: !this.state.deleted
-            })
-            NotificationManager.error('Cultivo eliminado con exito','Cultivo eliminado')
-        }
-
-        if(this.state.created){
-            this.setState({
-                created: !this.state.created
-            })
-            NotificationManager.info('Cultivo agregado con exito','Cultivo agregado')
-        }
-
         return (
-            <div className="listCrops-container">
-                {
-                    lots.map(lot => {
-                        return(
-                            <Link to={`/options/detailCrop/${lot._id}`} className="crop1">
-                                <div className="crop1-detail">
-                                    <h3>{lot.name}</h3>
-                                    <p>{lot.plants} plantas</p>
-                                    <p>{moment(lot.createdDate).format('DD/MM/YYYY')}</p>
-                                </div>
-                            </Link>
-                        )
-                    })
-                }
+            <div className="listCrops">
+                <div className="listCrops-container">
+                    {   
+                        lots.length > 0 ?
+                            lots.map(lot => {
+                                return(
+                                    <Link to={`/options/detailCrop/${lot._id}`} className="crop">
+                                        <div className="crop-detail">
+                                            <h3>{lot.name}</h3>
+                                            <p>{lot.plants} plantas</p>
+                                            <p>{moment(lot.createdDate).format('DD/MM/YYYY')}</p>
+                                        </div>
+                                    </Link>
+                                )
+                            })
+                            :
+                            <h3 className="ceroCrops">No hay cultivos</h3>
+                    }
+                </div>    
                 
-            
                 <Link to="/options/addCrop" className="addCrop">
                     <button className="btnAddCrop">Añadir cultivo</button>
                 </Link>
                 <NotificationContainer />
             </div>
+            
         );
     }
 }
