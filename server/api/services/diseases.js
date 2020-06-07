@@ -32,7 +32,6 @@ const DiseasesService = {
             if(req.files){
                 let urls = []
                 for(let file of req.files) {
-                    console.log(file)
                     const res = await s3Service.uploadImage(file, disease._id)
                     urls.push(res.imageURL)
                     
@@ -71,7 +70,10 @@ const DiseasesService = {
                 status: 'error'
             });
 
-            await s3Service.deleteImage(disease.imageURL)
+            for(let file of disease.imagesURL) {
+                await s3Service.deleteImage(file)
+            }
+
             await disease.remove();
             res.send({ disease, status: 'success' });
         }catch(err){
