@@ -20,8 +20,11 @@
     height: 300px;
 }
 
+.disease h3 {
+    font-size: xx-large;
+}
+
 .disease-moko {
-    background-image: url("../../../images/enfermedad1.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -29,14 +32,6 @@
     background-blend-mode: lighten;
 }
 
-.disease-picudo {
-    background-image: url("../../../images/Enfermedades.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(255,255,255,0.2);
-    background-blend-mode: lighten;
-}
 
 @media screen and (min-width:1024px){
 

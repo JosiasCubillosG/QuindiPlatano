@@ -1,5 +1,6 @@
 import React from 'react';
-import Layout from './Layout';
+import Cargando from '../components/Cargando'
+import Error from '../components/Error'
 import "./styles/useful.css"
 import Axios from 'axios';
 import {FaRegMoneyBillAlt} from 'react-icons/fa'
@@ -10,6 +11,8 @@ class Useful extends React.Component {
     state = {
         income: [],
         outlay: [],
+        cargando: true,
+        error: false
     }
 
     getIncome = () => {
@@ -19,36 +22,48 @@ class Useful extends React.Component {
         .then(res => {
             if(res.data.status == 'success'){
                 this.setState({
-                    income: res.data.income
+                    income: res.data.income,
+                    cargando: false
                 })
             }else{
+                this.setState({
+                    error:true
+                })
                 const error = new Error(res.error)
                 throw error
             }
         })
         .catch(err => {
+            this.setState({
+                error:true
+            })
             console.log(err)
         })
         return 0
     }
 
     getOutlay = () => {
-        console.log('Hola')
         Axios('/api/expenses',{
             method: 'GET'
         })
         .then(res => {
-            console.log('Hola')
             if(res.data.status == 'success'){
                 this.setState({
-                    outlay: res.data.expense
+                    outlay: res.data.expense,
+                    cargando: false
                 })                
             }else{
+                this.setState({
+                    error:true
+                })
                 const error = new Error(res.error)
                 throw error
             }
         })
         .catch(err => {
+            this.setState({
+                error:true
+            })
             console.log(err)
         })
     }
@@ -76,8 +91,15 @@ class Useful extends React.Component {
 
     render() {
 
-        const {income, outlay} = this.state
+        const {income, outlay, cargando, error} = this.state
 
+        if(cargando){
+            return <Cargando />
+        }
+
+        if(error){
+            return <Error />
+        }
 
         return (
             <div className="useful-container">

@@ -96,6 +96,45 @@ th, td {
     margin-top: 20px;
 }
 
+.incomeTitleGroup{
+    display: grid;
+    grid-template: 1fr/55% 45%;
+    margin-top: 20px;
+}
+
+.incomeTitleGroup h1{
+    display: flex;
+    margin: 0;
+    justify-content: flex-end;
+    color: green;
+}
+
+.incomeIcon {
+    font-size: xx-large;
+    color: green;
+    margin-left: 5px;
+}
+
+.outlayTitleGroup {
+    display: grid;
+    grid-template: 1fr/55% 45%;
+    margin-top: 20px;
+}
+
+.outlayTitleGroup h1{
+    display: flex;
+    margin: 0;
+    justify-content: flex-end;
+    color: red;
+}
+
+.outlayIcon {
+    transform: scaleX(-1);
+    font-size: xx-large;
+    color: red;
+    margin-left: 5px;
+}
+
 
 @media screen and (max-width:1024px) and (min-width:640px){
 

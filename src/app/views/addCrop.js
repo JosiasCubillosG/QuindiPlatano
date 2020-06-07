@@ -1,11 +1,10 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import {Link, withRouter} from 'react-router-dom'
+import Cargando from '../components/Cargando'
+import Error from '../components/Error'
 import "./styles/addCrop.css"
 import Axios from 'axios';
 import {GiFarmer,GiFarmTractor} from 'react-icons/gi'
-import {NotificationContainer, NotificationManager} from 'react-notifications'
-import '../../../node_modules/react-notifications/lib/notifications.css'
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -16,9 +15,12 @@ class AddCrop extends React.Component {
         name: '',
         plants: '',
         id: '',
+        cargando: true,
+        error: false
     }
 
     componentDidMount = () => {
+        this.setState({cargando:false})
         if(this.props.location.state){
             this.setState({
                 name: this.props.location.state.name,
@@ -38,10 +40,10 @@ class AddCrop extends React.Component {
     addCrop = (e) => {
         e.preventDefault()
         if(this.state.plants == 0 || this.state.name.trim() == '' || Math.sign(this.state.plants) == -1){
-            NotificationManager.warning('Digite algún dato','Datos vacios',2000)
+            toast.info('DIGITE UN NÚMERO CORRECTO DE PLANTAS',{position: toast.POSITION.TOP_CENTER})
         }else{
             if(this.state.id){
-                NotificationManager.info('Cultivo editado con exito','Cultivo editado',2000)
+                toast.warning('CULTIVO EDITADO CON EXITO',{position: toast.POSITION.TOP_CENTER, autoClose: 2000})
                 setTimeout(()=>{
                     Axios(`/api/lots/${this.state.id}`,{
                         method: 'PUT',
@@ -54,16 +56,22 @@ class AddCrop extends React.Component {
                                 state: {...this.state}
                             })
                         }else{
+                            this.setState({
+                                error: true
+                            })
                             const error = new Error(res.error)
                             throw error
                         }
                     })
                     .catch(err =>{
+                        this.setState({
+                            error: true
+                        })
                         console.log(err)
                     })    
-                },1000)
+                },2000)
             }else{
-                NotificationManager.info('Cultivo agregado con exito','Cultivo agregado',2000)
+                toast.success('CULTIVO AGREGADO CON EXITO',{position: toast.POSITION.TOP_CENTER, autoClose:2000})
                 setTimeout(()=>{
                     Axios('/api/lots',{
                         method: 'POST',
@@ -77,14 +85,20 @@ class AddCrop extends React.Component {
                                 state: {...this.state}
                             })
                         }else{
+                            this.setState({
+                                error: true
+                            })
                             const error = new Error(res.error)
                             throw error
                         }
                     })
                     .catch(err =>{
+                        this.setState({
+                            error: true
+                        })
                         console.log(err)
                     })
-                }, 1000) 
+                }, 2000) 
             }
         }
     }
@@ -94,6 +108,15 @@ class AddCrop extends React.Component {
     }
 
     render() {
+
+        if(this.state.cargando){
+            return <Cargando />
+        }
+
+        if(this.state.error){
+            return <Error />
+        }
+
         return (
             <div className="addCrop-container">
                 <h2 className="addCrop-title">{this.getTitle()}</h2>
@@ -123,7 +146,7 @@ class AddCrop extends React.Component {
                                     
                     <button type="submit" value="Submit" className="add-btn">{this.getTitle()}</button>
                 </form>
-                <NotificationContainer />
+                <ToastContainer />
             </div>
         );
     }

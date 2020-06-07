@@ -1,0 +1,43 @@
+.error {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+}
+
+.error__title{
+    display: grid;
+    grid-template: 1fr / 2fr; 
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-items: center;
+    height: max-content;
+}
+.error__title svg{
+    margin-bottom: 4px;
+}
+
+.error__title h1{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+    
+    
+.error__description p {
+    text-align: center;
+}
+
+
+@media screen and (min-width: 1024px){
+    .error__title{
+
+        font-size: xx-large;
+    }
+
+    .error__description{
+        font-size: xx-large;
+    }
+}

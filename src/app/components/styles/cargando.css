@@ -1,0 +1,38 @@
+.cargando{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+.cargando__animacion {
+    display: inline-block;
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    color: green;
+}    
+
+.cargando__animacion:after {
+    content: " ";
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid green;
+    border-color: green transparent green transparent;
+    animation: cargando__animacion 1.2s linear infinite;
+}
+
+@keyframes cargando__animacion {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,8 +1,6 @@
 import React, {useEffect} from "react";
 import "./styles/login.css";
 import {Link, withRouter, Redirect} from "react-router-dom"
-import ModalPassContainer from "./modalPassContainer";
-import ModalPass from "../components/modalPass";
 import Context from '../Context'
 import {FaUserAlt} from 'react-icons/fa'
 import {RiLockPasswordLine} from 'react-icons/ri'

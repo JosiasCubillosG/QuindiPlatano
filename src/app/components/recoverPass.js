@@ -9,19 +9,10 @@ const Recover = (props) => {
         <div className="recover-container">
             <div className="recover">
                 <h2>Recuperar Contraseña</h2>
-
-                <div className="group-recover">
-                    <div className="group-recover-icon">
-                        <MdPhoneAndroid className="recover-icon" />
-                    </div>
-                    <div className="group-recover-input">
-                        <input className="recover-pass" type="text" name="recover" placeholder="Número telefonico" />
-                    </div>
-                </div>
                 
-                <Link to="/">
-                    <button onClick={props.recoverPass} className="recover-btn">Solicitar recuperación</button>
-                </Link>
+                <div >
+                    <a  href="https://api.whatsapp.com/send?phone=573186337855&text=Hola,%20quiero%20cambiar%20la%20contraseña." target="_blank" className="recover-btn">Solicitar recuperación</a>
+                </div>
             </div>
         </div>
     )

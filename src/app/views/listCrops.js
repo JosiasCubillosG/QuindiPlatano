@@ -1,9 +1,8 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Cargando from '../components/Cargando'
+import Error from '../components/Error'
 import "./styles/listCrops.css"
 import {Link} from "react-router-dom"
-import {NotificationContainer, NotificationManager} from 'react-notifications'
-import '../../../node_modules/react-notifications/lib/notifications.css'
 import Axios from 'axios';
 import moment from 'moment'
 import 'moment/locale/es'
@@ -15,6 +14,8 @@ class ListCrops extends React.Component {
 
     state = {
         lots: [],
+        cargando: true,
+        error: false
     }
 
     componentDidMount = () => {
@@ -29,19 +30,35 @@ class ListCrops extends React.Component {
             if(res.data.status === 'success') {
                 this.setState({
                     lots: res.data.lots,
+                    cargando: false
                 })
             }else{
+                this.setState({
+                    error: true
+                })
                 const error = new Error(res.error)
                 throw error
             }
         })
         .catch(err =>{
+            this.setState({
+                error: true
+            })
             console.log(err)
         })
     }
 
     render() {
-        const {lots} = this.state
+        const {lots,cargando,error} = this.state
+
+        if(cargando){
+            return <Cargando />
+        }
+
+        if(error){
+            return <Error />
+        }
+
         return (
             <div className="listCrops">
                 <div className="listCrops-container">
@@ -66,7 +83,6 @@ class ListCrops extends React.Component {
                 <Link to="/options/addCrop" className="addCrop">
                     <button className="btnAddCrop">Añadir cultivo</button>
                 </Link>
-                <NotificationContainer />
             </div>
             
         );

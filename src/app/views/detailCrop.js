@@ -1,8 +1,8 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Cargando from '../components/Cargando'
+import Error from '../components/Error'
 import "./styles/detailCrop.css"
-import {NotificationContainer, NotificationManager} from 'react-notifications'
-import '../../../node_modules/react-notifications/lib/notifications.css'
+import { ToastContainer, toast } from 'react-toastify';
 import Axios from 'axios';
 import moment from 'moment'
 import 'moment/locale/es'
@@ -15,7 +15,6 @@ class DetailCrop extends React.Component {
         lot: [],
         cargando: true,
         error: false,
-        edited: false,
     }
 
     componentDidMount = () => {
@@ -34,39 +33,48 @@ class DetailCrop extends React.Component {
                     cargando: false,
                 })
             }else{
+                this.setState({
+                    error: true
+                })
                 const error = new Error(res.error)
                 throw error
             }
         })
         .catch(err => {
+            this.setState({
+                error: true
+            })
             console.log(err)
         })
     }
 
     deleteCrop = () => {
-        NotificationManager.error('Cultivo eliminado con exito','Cultivo eliminado',2000)
+        toast.error('CULTIVO ELIMINADO CON EXITO',{position: toast.POSITION.TOP_CENTER, autoClose:2000})
         setTimeout(() =>{
             Axios(`/api/lots/${this.state.lot._id}`,{
                 method: 'DELETE'
             })
             .then(res=>{
                 if(res.data.status == 'success'){
-                    this.setState({
-                        edited: true
-                    })
                     this.props.history.push({
                         pathname: "/options/crops",
                         state: {...this.state}
                     })
                 }else{
+                    this.setState({
+                        error: true
+                    })
                     const error = new Error(res.error)
                     throw error
                 }
             })
             .catch(err => {
+                this.setState({
+                    error: true
+                })
                 console.log(err)
             })
-        },1000)
+        },2000)
     }
 
     editCrop = () => {
@@ -81,26 +89,10 @@ class DetailCrop extends React.Component {
             task.state = false
             e.target.style.backgroundColor = "red"
             Axios(`/api/lots/${this.state.lot._id}`,{method: 'PUT', data:{...this.state.lot}})
-                .then(res =>{
-                    console.log(res)
-                    console.log('BIEN')
-                })
-                .catch(err =>{
-                    console.log(err)
-                    console.log('MALL')
-                })
         }else{
             task.state = true
             e.target.style.backgroundColor = "green"
             Axios(`/api/lots/${this.state.lot._id}`,{method: 'PUT', data:{...this.state.lot}})
-                .then(res =>{
-                    console.log(res)
-                    console.log('BIEN')
-                })
-                .catch(err =>{
-                    console.log(err)
-                    console.log('MALL')
-                })
         }
     }
 
@@ -110,7 +102,11 @@ class DetailCrop extends React.Component {
         const{lot,cargando,error} = this.state
         
         if(cargando){
-            return 'Cargando...'
+            return <Cargando />
+        }
+
+        if(error){
+            return <Error />
         }
 
         return (
@@ -149,7 +145,7 @@ class DetailCrop extends React.Component {
                                 <div className="cropTaskDetail" style={Image}>
                                     <h4>{task.name}</h4>
                                     <div className="check">
-                                        <h6>Dentro de: {task.days} dias</h6>
+                                        <h6>Dentro de: {(moment(lot.createdDate).add(task.days,'m')).diff(moment().format(),'minutes') > 0 ? (moment(lot.createdDate).add(task.days,'m')).diff(moment().format(),'minutes') : 0} dias</h6>
                                         <div className="checkTaskFalse" style={colorTask} onClick={(e) => this.changeStatus(e,task)}></div>
                                     </div>
                                 </div>
@@ -157,7 +153,7 @@ class DetailCrop extends React.Component {
                         })
                     }
                 </div>
-                <NotificationContainer />
+                <ToastContainer />
             </div>
         );
     }

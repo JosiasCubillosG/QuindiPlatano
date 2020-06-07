@@ -1,32 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.9a83f546.chunk.css",
-    "main.js": "/static/js/main.1b1792ee.chunk.js",
-    "main.js.map": "/static/js/main.1b1792ee.chunk.js.map",
+    "main.css": "/static/css/main.82f5b29b.chunk.css",
+    "main.js": "/static/js/main.042b3117.chunk.js",
+    "main.js.map": "/static/js/main.042b3117.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e3061cf0.js",
     "runtime-main.js.map": "/static/js/runtime-main.e3061cf0.js.map",
-    "static/css/2.5517a65f.chunk.css": "/static/css/2.5517a65f.chunk.css",
-    "static/js/2.ffa8576c.chunk.js": "/static/js/2.ffa8576c.chunk.js",
-    "static/js/2.ffa8576c.chunk.js.map": "/static/js/2.ffa8576c.chunk.js.map",
+    "static/css/2.86bd15a7.chunk.css": "/static/css/2.86bd15a7.chunk.css",
+    "static/js/2.adf9b909.chunk.js": "/static/js/2.adf9b909.chunk.js",
+    "static/js/2.adf9b909.chunk.js.map": "/static/js/2.adf9b909.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.d54f7dd10d7bfa25fff2be8f00af1b6e.js": "/precache-manifest.d54f7dd10d7bfa25fff2be8f00af1b6e.js",
+    "precache-manifest.8049e24080dd5c56829ceb37b832cc44.js": "/precache-manifest.8049e24080dd5c56829ceb37b832cc44.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.5517a65f.chunk.css.map": "/static/css/2.5517a65f.chunk.css.map",
-    "static/css/main.9a83f546.chunk.css.map": "/static/css/main.9a83f546.chunk.css.map",
-    "static/js/2.ffa8576c.chunk.js.LICENSE.txt": "/static/js/2.ffa8576c.chunk.js.LICENSE.txt",
-    "static/media/diseases.css": "/static/media/enfermedad1.d90e6175.jpeg",
-    "static/media/menu.css": "/static/media/home.64d02463.svg",
+    "static/css/2.86bd15a7.chunk.css.map": "/static/css/2.86bd15a7.chunk.css.map",
+    "static/css/main.82f5b29b.chunk.css.map": "/static/css/main.82f5b29b.chunk.css.map",
+    "static/js/2.adf9b909.chunk.js.LICENSE.txt": "/static/js/2.adf9b909.chunk.js.LICENSE.txt",
     "static/media/chooseOption.css": "/static/media/control.89bfba7a.jpg",
+    "static/media/menu.css": "/static/media/home.64d02463.svg",
     "static/media/accounting.css": "/static/media/utilidad.167454f3.jpg",
+    "static/media/enfermedad1.jpeg": "/static/media/enfermedad1.d90e6175.jpeg",
     "static/media/login.css": "/static/media/fumigar.609b414d.jpg",
-    "static/media/notifications.css": "/static/media/notification.c0d3c94c.eot",
     "static/media/recoverpass.css": "/static/media/platanos.91975579.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e3061cf0.js",
-    "static/css/2.5517a65f.chunk.css",
-    "static/js/2.ffa8576c.chunk.js",
-    "static/css/main.9a83f546.chunk.css",
-    "static/js/main.1b1792ee.chunk.js"
+    "static/css/2.86bd15a7.chunk.css",
+    "static/js/2.adf9b909.chunk.js",
+    "static/css/main.82f5b29b.chunk.css",
+    "static/js/main.042b3117.chunk.js"
   ]
 }

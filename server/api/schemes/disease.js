@@ -22,7 +22,23 @@ const DiseaseScheme = new Schema({
     imageURL: {
         required: 'Please add a image',
         type: String
-    }
+    },
+    // imageURL2: {
+    //     required: 'Please add a image',
+    //     type: String
+    // },
+    // imageURL3: {
+    //     required: 'Please add a image',
+    //     type: String
+    // },
+    // imageURL4: {
+    //     required: 'Please add a image',
+    //     type: String
+    // },
+    // imageURL5: {
+    //     required: 'Please add a image',
+    //     type: String
+    // },
 
 });
 

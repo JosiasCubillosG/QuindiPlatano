@@ -37,6 +37,8 @@ const Provider = ({children}) => {
                 console.log(res)
                 if(res.data.status === "success") {
                     setIsAuth(!isAuth)
+                    setEmail("")
+                    setpassword("")
                     window.sessionStorage.setItem('token',res.data.token)
                 }else{
                     const error = new Error(res.error)

@@ -1,5 +1,6 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Cargando from '../components/Cargando'
+import Error from '../components/Error'
 import "./styles/diseases.css"
 import { Link } from "react-router-dom"
 import Axios from 'axios';
@@ -22,20 +23,23 @@ class Diseases extends React.Component {
                     diseases: res.data.disease,
                     cargando: false
                 })
-                console.log(this.state.diseases)
             }else{
+                this.setState({
+                    error: true
+                })
                 const error = new Error(res.error)
                 throw error
             }
         })
         .catch(err => {
+            this.setState({
+                error: true
+            })
             console.log(err)
         })
     }
 
     detailDisease = (id) => {
-
-        console.log('Id:',id)
         Axios(`/api/diseases/${id}`,{
             method: 'GET'
         })
@@ -43,29 +47,42 @@ class Diseases extends React.Component {
             if(res.data.status == 'success'){
                 this.props.history.push("/options/diseases/detail")
             }else{
+                this.setState({
+                    error: true
+                })
                 const error = new Error(res.error)
                 throw error
             }
         })
         .catch(err => {
+            this.setState({
+                error: true
+            })
             console.log(err)
         })
     }
     
 
     render() {
-        const {diseases, cargando} = this.state
+        const {diseases, cargando,error} = this.state
 
         if(cargando){
-            return 'Cargando...'
+            return <Cargando />
+        }
+
+        if(error){
+            return <Error />
         }
 
         return (
             <div className="diseases-container">
                 {
                     diseases.map(disease => {
+                        const Image = {
+                            backgroundImage: 'url(' + disease.imageURL + ')',
+                        }
                         return(
-                            <Link className="disease disease-moko" to={`/options/diseases/${disease._id}`}>
+                            <Link className="disease disease-moko" to={`/options/diseases/${disease._id}`} style={Image} >
                                 <h3>{disease.name}</h3>
                             </Link>
                         )
