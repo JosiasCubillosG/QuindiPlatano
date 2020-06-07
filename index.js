@@ -52,9 +52,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(multer({
 	storage,
-	dest: path.join(__dirname,'./server/api/images'),
 	// limits: {fileSize: 1000000}
-}).single('imageURL'))
+}).array('imagesURL',6))
 
 // database setting
 mongoose.Promise = global.Promise;

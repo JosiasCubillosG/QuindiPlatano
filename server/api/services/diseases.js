@@ -29,18 +29,15 @@ const DiseasesService = {
         const { body: diseaseData } = req;
         try{
             const disease = new Disease(diseaseData);
-            if(req.file){
-                const amazonResponse = await s3Service.uploadImage(req.file, disease._id);
-                // const amazonResponse2 = await s3Service.uploadImage(req.file, disease._id);
-                // const amazonResponse3 = await s3Service.uploadImage(req.file, disease._id);
-                // const amazonResponse4 = await s3Service.uploadImage(req.file, disease._id);
-                // const amazonResponse5 = await s3Service.uploadImage(req.file, disease._id);
-
-                disease.imageURL = amazonResponse.imageURL
-                // disease.imageURL2 = amazonResponse2.imageURL
-                // disease.imageURL3 = amazonResponse3.imageURL
-                // disease.imageURL4 = amazonResponse4.imageURL
-                // disease.imageURL5 = amazonResponse5.imageURL
+            if(req.files){
+                let urls = []
+                for(let file of req.files) {
+                    console.log(file)
+                    const res = await s3Service.uploadImage(file, disease._id)
+                    urls.push(res.imageURL)
+                    
+                }
+                disease.imagesURL = urls
             }
             await disease.save();
             res.send({ disease, status: 'success' });

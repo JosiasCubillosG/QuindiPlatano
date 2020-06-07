@@ -19,10 +19,11 @@ const DiseaseScheme = new Schema({
         required: 'Please add the treatment',
         type: String
     },
-    imageURL: {
-        required: 'Please add a image',
-        type: String
-    },
+    imagesURL: [
+        {
+            type: String
+        },
+    ]
     // imageURL2: {
     //     required: 'Please add a image',
     //     type: String
