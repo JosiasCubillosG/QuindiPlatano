@@ -79,7 +79,7 @@ class Diseases extends React.Component {
                 {
                     diseases.map(disease => {
                         const Image = {
-                            backgroundImage: 'url(' + disease.imageURL + ')',
+                            backgroundImage: 'url(' + disease.imagesURL[0] + ')',
                         }
                         return(
                             <Link className="disease disease-moko" to={`/options/diseases/${disease._id}`} style={Image} >
