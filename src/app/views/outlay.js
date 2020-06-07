@@ -7,7 +7,7 @@ import {FiEdit} from 'react-icons/fi'
 import {MdDeleteForever} from 'react-icons/md'
 import {RiNumbersLine} from 'react-icons/ri'
 import { ToastContainer, toast } from 'react-toastify';
-
+import Numeral from 'numeral'
 
 
 class Outlay extends React.Component {
@@ -217,7 +217,7 @@ class Outlay extends React.Component {
                     
                     <div className="incomeTable-container">
                         <h3 className="total">
-                            Gasto Total: ${this.totalValue(total)}
+                            Gasto Total: {Numeral(this.totalValue(total)).format('$0,0')}
                         </h3>
                         <table className="incomeTable">
                             <tr>
@@ -230,7 +230,7 @@ class Outlay extends React.Component {
                                     return(
                                         <tr>
                                             <td className="th-name">{outlay.description}</td>
-                                            <td className="th-valor">{outlay.value}</td>
+                                            <td className="th-valor">{Numeral(outlay.value).format('$0,0')}</td>
                                             <td className="th-valor">
                                                 <FiEdit onClick={()=>this.editOutlay(outlay._id)} className="editIncome" />
                                                 <MdDeleteForever onClick={()=>this.deleteOutlay(outlay._id)} className="deleteIncome" />

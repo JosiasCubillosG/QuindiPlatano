@@ -7,6 +7,7 @@ import {FiEdit} from 'react-icons/fi'
 import {MdDeleteForever} from 'react-icons/md'
 import {RiNumbersLine} from 'react-icons/ri'
 import { ToastContainer, toast } from 'react-toastify';
+import Numeral from 'numeral'
 
 class Income extends React.Component {
 
@@ -221,7 +222,7 @@ class Income extends React.Component {
                     </form>
                     <div className="incomeTable-container">
                         <h3 className="total">
-                            Ingreso Total: ${this.totalValue(total)}
+                            Ingreso Total: {Numeral(this.totalValue(total)).format('$0,0')}
                         </h3>
                         <table className="incomeTable">
                             <tr>
@@ -233,7 +234,7 @@ class Income extends React.Component {
                                     return(
                                         <tr>
                                             <td className="th-name">{income.description}</td>
-                                            <td className="th-valor">{income.value}</td>
+                                            <td className="th-valor">{Numeral(income.value).format('$0,0')}</td>
                                             <td className="th-valor">
                                                 <FiEdit onClick={()=>this.editIncome(income._id)} className="editIncome" />
                                                 <MdDeleteForever onClick={()=>this.deleteIncome(income._id)} className="deleteIncome" />

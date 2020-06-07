@@ -5,6 +5,7 @@ import "./styles/useful.css"
 import Axios from 'axios';
 import {FaRegMoneyBillAlt} from 'react-icons/fa'
 import {FaDollarSign} from 'react-icons/fa'
+import Numeral from 'numeral'
 
 class Useful extends React.Component {
 
@@ -109,7 +110,7 @@ class Useful extends React.Component {
                     </h1>         
                 </div>
                 <div className="useful-value">
-                    <FaDollarSign className="useful-icon" /> <p className="useful-value-p">{this.getUseful(income,outlay)}</p> 
+                    <FaDollarSign className="useful-icon" /> <p className="useful-value-p">{Numeral(this.getUseful(income,outlay)).format('0,0')}</p> 
                 </div>
                 <div className="useful-value">
                     <FaRegMoneyBillAlt className="useful-value-icon" />
