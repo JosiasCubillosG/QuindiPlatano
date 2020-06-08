@@ -1,5 +1,6 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import Cargando from '../components/Cargando'
+import Error from '../components/Error'
 import "./styles/chooseOption.css"
 import {Link} from "react-router-dom"
 import Axios from 'axios'
@@ -8,7 +9,7 @@ import 'moment/locale/es'
 moment.locale('es')
 
 class ChooseOption extends React.Component {
-    
+
     componentDidMount = async() => {
         try {
             const response = await Axios('/api/lots')
@@ -16,7 +17,7 @@ class ChooseOption extends React.Component {
             response.data.lots.map(lot => {      
                 lot.tasks.forEach((task,index) => {
                     // console.log(task)
-                    if(moment(lot.createdDate).add(task.days, 'minutes').format() <= moment().format() && !task.state){
+                    if(moment(lot.createdDate).add(task.days, 'days').format() <= moment().format() && !task.state){
                         // const lotData = Object.assign({},lot)
                         // lotData.tasks[index].state = true
                         // console.log(lotData)

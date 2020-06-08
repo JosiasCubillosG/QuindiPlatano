@@ -1,13 +1,10 @@
 import React from 'react';
 import Cargando from '../components/Cargando'
 import Error from '../components/Error'
-import DemoCarousel from '../components/carousel';
 import "./styles/detailDisease.css"
 import Axios from 'axios';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
-import enfermedad1 from "../../images/enfermedad1.jpeg"
-import enfermedad2 from "../../images/Enfermedades.jpg"
 
 class DetailDisease extends React.Component {
 
@@ -30,7 +27,8 @@ class DetailDisease extends React.Component {
                 
             }else{
                 this.setState({
-                    error: true
+                    error: true,
+                    cargando: false
                 })
                 const error = new Error(res.error)
                 throw error
@@ -38,7 +36,8 @@ class DetailDisease extends React.Component {
         })
         .catch(err => {
             this.setState({
-                error: true
+                error: true,
+                cargando: false
             })
             console.log(this.state)
             console.log(err)
@@ -47,7 +46,6 @@ class DetailDisease extends React.Component {
 
     render() {
         const {disease, cargando, error} = this.state
-        console.log(disease)
         if(cargando){
             return <Cargando />
         }

@@ -18,6 +18,7 @@ class Diseases extends React.Component {
             method: 'GET'
         })
         .then(res => {
+            console.log(res.data)
             if(res.data.status == 'success'){
                 this.setState({
                     diseases: res.data.disease,
@@ -25,7 +26,8 @@ class Diseases extends React.Component {
                 })
             }else{
                 this.setState({
-                    error: true
+                    error: true,
+                    cargando: false
                 })
                 const error = new Error(res.error)
                 throw error
@@ -33,7 +35,8 @@ class Diseases extends React.Component {
         })
         .catch(err => {
             this.setState({
-                error: true
+                error: true,
+                cargando: false
             })
             console.log(err)
         })
@@ -48,7 +51,8 @@ class Diseases extends React.Component {
                 this.props.history.push("/options/diseases/detail")
             }else{
                 this.setState({
-                    error: true
+                    error: true,
+                    cargando: false
                 })
                 const error = new Error(res.error)
                 throw error
@@ -56,7 +60,8 @@ class Diseases extends React.Component {
         })
         .catch(err => {
             this.setState({
-                error: true
+                error: true,
+                cargando: false
             })
             console.log(err)
         })
@@ -65,7 +70,6 @@ class Diseases extends React.Component {
 
     render() {
         const {diseases, cargando,error} = this.state
-
         if(cargando){
             return <Cargando />
         }

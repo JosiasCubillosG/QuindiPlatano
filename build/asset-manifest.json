@@ -1,31 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.82f5b29b.chunk.css",
-    "main.js": "/static/js/main.057be8c4.chunk.js",
-    "main.js.map": "/static/js/main.057be8c4.chunk.js.map",
+    "main.css": "/static/css/main.03c09468.chunk.css",
+    "main.js": "/static/js/main.e59506e8.chunk.js",
+    "main.js.map": "/static/js/main.e59506e8.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e3061cf0.js",
     "runtime-main.js.map": "/static/js/runtime-main.e3061cf0.js.map",
     "static/css/2.86bd15a7.chunk.css": "/static/css/2.86bd15a7.chunk.css",
-    "static/js/2.0cefe430.chunk.js": "/static/js/2.0cefe430.chunk.js",
-    "static/js/2.0cefe430.chunk.js.map": "/static/js/2.0cefe430.chunk.js.map",
+    "static/js/2.b5e2fae7.chunk.js": "/static/js/2.b5e2fae7.chunk.js",
+    "static/js/2.b5e2fae7.chunk.js.map": "/static/js/2.b5e2fae7.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.029ebccec78820481263dc4d3d77e94b.js": "/precache-manifest.029ebccec78820481263dc4d3d77e94b.js",
+    "precache-manifest.bf30fd220e697a2600afcf2e9402af36.js": "/precache-manifest.bf30fd220e697a2600afcf2e9402af36.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.86bd15a7.chunk.css.map": "/static/css/2.86bd15a7.chunk.css.map",
-    "static/css/main.82f5b29b.chunk.css.map": "/static/css/main.82f5b29b.chunk.css.map",
-    "static/js/2.0cefe430.chunk.js.LICENSE.txt": "/static/js/2.0cefe430.chunk.js.LICENSE.txt",
+    "static/css/main.03c09468.chunk.css.map": "/static/css/main.03c09468.chunk.css.map",
+    "static/js/2.b5e2fae7.chunk.js.LICENSE.txt": "/static/js/2.b5e2fae7.chunk.js.LICENSE.txt",
     "static/media/chooseOption.css": "/static/media/control.89bfba7a.jpg",
     "static/media/menu.css": "/static/media/home.64d02463.svg",
     "static/media/accounting.css": "/static/media/utilidad.167454f3.jpg",
-    "static/media/enfermedad1.jpeg": "/static/media/enfermedad1.d90e6175.jpeg",
     "static/media/login.css": "/static/media/fumigar.609b414d.jpg",
     "static/media/recoverpass.css": "/static/media/platanos.91975579.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e3061cf0.js",
     "static/css/2.86bd15a7.chunk.css",
-    "static/js/2.0cefe430.chunk.js",
-    "static/css/main.82f5b29b.chunk.css",
-    "static/js/main.057be8c4.chunk.js"
+    "static/js/2.b5e2fae7.chunk.js",
+    "static/css/main.03c09468.chunk.css",
+    "static/js/main.e59506e8.chunk.js"
   ]
 }

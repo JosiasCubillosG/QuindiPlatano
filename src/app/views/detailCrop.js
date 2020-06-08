@@ -34,7 +34,8 @@ class DetailCrop extends React.Component {
                 })
             }else{
                 this.setState({
-                    error: true
+                    error: true,
+                    cargando: false
                 })
                 const error = new Error(res.error)
                 throw error
@@ -42,7 +43,8 @@ class DetailCrop extends React.Component {
         })
         .catch(err => {
             this.setState({
-                error: true
+                error: true,
+                cargando: false
             })
             console.log(err)
         })
@@ -62,7 +64,8 @@ class DetailCrop extends React.Component {
                     })
                 }else{
                     this.setState({
-                        error: true
+                        error: true,
+                        cargando: false
                     })
                     const error = new Error(res.error)
                     throw error
@@ -70,7 +73,8 @@ class DetailCrop extends React.Component {
             })
             .catch(err => {
                 this.setState({
-                    error: true
+                    error: true,
+                    cargando: false
                 })
                 console.log(err)
             })
